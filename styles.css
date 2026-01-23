@@ -61,6 +61,23 @@ body {
 .gradient-overlay { position: absolute; inset: 0; background: radial-gradient(1200px 600px at 80% 20%, rgba(79,140,255,0.25) 0%, rgba(0,0,0,0) 60%); }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
+ /* section hero */
+.hero * {
+  text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.9);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
 /* Vidéothèque */
 .video-grid {
   display: grid;
@@ -310,7 +327,7 @@ input:focus, select:focus, textarea:focus {
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .menu.open a { padding: 12px; }
-/* Footer modernisé */
+/* Footer */
 .footer {
   background: #0A0F1E;
   padding: 40px 0;
@@ -336,6 +353,9 @@ input:focus, select:focus, textarea:focus {
 }
 .footer-bottom a:hover { text-decoration: underline; }
 
+.blue-text {
+  color: #4f8cff;
+}
 .coach-info a {
   margin:0 40px 0;  
 }
