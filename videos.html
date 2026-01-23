@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coach — Vidéothèque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo">ROC<span>International</span></a>
+    <nav class="menu" id="menu">
+      <a href="index.html">Accueil</a>
+      <a href="traduction.html">Traduction</a>
+      <a href="coaching.html">Coaching</a>
+      <!-- <a href="videos.html" class="active">Vidéothèque</a> 
+      <a href="temoignages.html">Témoignages</a>-->
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Vidéothèque</h2>
+      <p>Choisissez une catégorie pour filtrer les vidéos.</p>
+    </div>
+
+    <!-- Filtres -->
+    <div class="filters">
+      <button class="btn btn-outline filter-btn active" data-filter="all">Toutes</button>
+      <button class="btn btn-outline filter-btn" data-filter="traduction">Traduction</button>
+      <button class="btn btn-outline filter-btn" data-filter="coaching">Coaching</button>
+      <button class="btn btn-outline filter-btn" data-filter="business">Business English</button>
+    </div>
+
+    <!-- Grille vidéos -->
+    <div class="video-grid">
+      <div class="video-card" data-category="coaching">
+        <div class="video-thumb">
+          <iframe src="https://www.youtube.com/embed/2tM1LrW7Sgk" title="Cours d'anglais débutant" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h4>Cours d’anglais débutant — 20 min</h4>
+      </div>
+
+      <div class="video-card" data-category="traduction">
+        <div class="video-thumb">
+          <iframe src="https://www.youtube.com/embed/1vRto-2MMGQ" title="Techniques de traduction" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h4>Techniques de traduction — 15 min</h4>
+      </div>
+
+      <div class="video-card" data-category="business">
+        <div class="video-thumb">
+          <iframe src="https://www.youtube.com/embed/EXAMPLE" title="Business English" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h4>Business English — 10 min</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> CoachLangues. Tous droits réservés.</p>
+    <div class="socials">
+      <a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

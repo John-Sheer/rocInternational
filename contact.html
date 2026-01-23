@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROC International — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo">ROC<span>International</span></a>
+    <nav class="menu" id="menu">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="traduction.html">Traduction</a>
+      <a href="coaching.html">Coaching</a>
+      <!-- <a href="videos.html">Vidéothèque</a>
+      <a href="temoignages.html">Témoignages</a> -->
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <p>Expliquez votre besoin — nous répondons sous 24h.</p>
+      <p>Que vous ayez besoin de traduction professionnelle ou de coaching en anglais, notre équipe est là pour vous aider. N'hésitez pas à nous contacter pour discuter de votre projet.</p>
+      <p>ROC International met à votre disposition une équipe d'experts en traduction et en coaching linguistique. Nous comprenons l'importance de la communication précise et efficace dans un monde globalisé. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons transformer votre approche des langues et améliorer vos compétences en anglais.</p>
+      <p>Nos services incluent la traduction de documents professionnels, les sessions de coaching personnalisées, et bien d'autres solutions adaptées à vos besoins spécifiques. Nous nous engageons à fournir un service de qualité supérieure avec un support réactif et bienveillant.</p>
+    </div>
+
+    <!-- Formspree pour envoyer vers agbekogbe@yahoo.fr -->
+    <form id="contactForm" class="form card" action="https://formspree.io/f/yourFormID" method="POST">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cName">Nom complet</label>
+          <input type="text" id="cName" name="name" placeholder="Votre nom" required />
+        </div>
+        <div class="form-field">
+          <label for="cEmail">Email</label>
+          <input type="email" id="cEmail" name="email" placeholder="vous@exemple.com" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cService">Service</label>
+          <select id="cService" name="service" required>
+            <option value="">Sélectionner</option>
+            <option>Traduction</option>
+            <option>Coaching d'anglais</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="cPhone">Téléphone</label>
+          <input type="text" id="cPhone" name="phone" placeholder="Votre numéro" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field full">
+          <label for="cMessage">Message</label>
+          <textarea id="cMessage" name="message" rows="5" placeholder="Votre message..." required></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer-modern" role="contentinfo"> 
+  <div class="container footer-bottom"> 
+    <p class="copyright">© <span id="year"></span> ROC International. Tous droits réservés.</p> 
+    <div class="socials" aria-label="Réseaux sociaux"> 
+      <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a> 
+      <a href="#" class="social-link" aria-label="YouTube">YouTube</a> 
+      <a href="#" class="social-link" aria-label="Twitter">Twitter</a> 
+    </div> 
+  </div> 
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
