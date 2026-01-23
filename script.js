@@ -52,6 +52,7 @@ if (contactForm) {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(contactForm).entries());
 
+    // Use the provided email for testing
     if (!data.name || !isEmail(data.email) || !data.message || !data.service) {
       if (contactMsg) {
         contactMsg.textContent = 'Veuillez renseigner votre nom, un email valide, le service et votre message.';
@@ -70,7 +71,7 @@ if (contactForm) {
         <h3>Message envoyé ✉️</h3>
         <p>Merci <strong>${data.name}</strong> !</p>
         <p>Service: <strong>${data.service}</strong>${data.budget ? ` — Budget: <strong>${data.budget}</strong>` : ''}</p>
-        <p>Nous vous répondrons sous 24h à <strong>${data.email}</strong>.</p>
+        <p>Nous vous répondrons sous 24h à <strong>meskojohn@gmail.com</strong>.</p>
       `);
       if (contactMsg) {
         contactMsg.textContent = 'Message envoyé.';
