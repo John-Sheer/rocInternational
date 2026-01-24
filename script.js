@@ -227,3 +227,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Année automatique
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Animation footer bottom
+const footerBottom = document.querySelector(".footer-bottom");
+
+const observerFooter = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      footerBottom.classList.add("visible");
+    }
+  });
+});
+
+observerFooter.observe(footerBottom);
