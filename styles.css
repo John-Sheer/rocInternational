@@ -522,6 +522,7 @@ input:focus, select:focus, textarea:focus {
   color: #ffffff;
 }
 
+
 /* Accent couleur */
 .blue-text {
   background: linear-gradient(90deg, #60a5fa, #818cf8);
