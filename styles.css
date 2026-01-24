@@ -261,22 +261,157 @@ input:focus, select:focus, textarea:focus {
 }
 .menu.open a { padding: 12px; }
 
-/* Modales */
-.modal { display: none; position: fixed; inset: 0; z-index: 60; }
-.modal.open { display: block; }
-.modal-backdrop { position: fixed; inset: 0; background: rgba(2,6,23,0.6); z-index: 61; }
-.modal-content {
-  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: min(400px, 90%);
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  background: rgba(30, 41, 59, 0.95);
-  color: var(--text);
-  animation: zoomIn 0.4s ease;
-  z-index: 62;
+/* MODAL BASE */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
 }
-.modal-close { background: transparent; border: none; font-size: 1.6rem; position: absolute; right: 15px; top: 10px; cursor: pointer; color: var(--muted); }
+.modal.open {
+  display: block;
+}
+
+/* BACKDROP */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(2, 6, 23, 0.75),
+    rgba(2, 6, 23, 0.85)
+  );
+  backdrop-filter: blur(6px);
+  z-index: 61;
+}
+
+/* CONTENT */
+.modal-content.sheer-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: min(420px, 92%);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 32px 28px;
+  color: #e5e7eb;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  z-index: 62;
+  animation: modalIn 0.35s ease forwards;
+}
+
+/* CLOSE */
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.modal-close:hover {
+  color: #38bdf8;
+}
+
+/* logo sheer Tech */
+.sheer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.sheer-logo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Body du modal */
+.sheer-body {
+  text-align: center;
+}
+
+.sheer-body h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.sheer-tagline {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 22px;
+}
+
+/* section info du modal */
+.sheer-info {
+  display: grid;
+  gap: 14px;
+  font-size: 0.95rem;
+}
+.sheer-info strong {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Boutons SVG contact */
+.contact-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.contact-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  border-color: #38bdf8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+.contact-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #38bdf8;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ANIMATION */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 
 /* Bande de profil */
 .profile-strip {
@@ -320,9 +455,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /*  Glass cards  */
-.brand,
-.contact-card,
-.links {
+.brand, .contact-card, .links {
   background: linear-gradient(
     180deg,
     rgba(255,255,255,.06),
@@ -389,7 +522,7 @@ input:focus, select:focus, textarea:focus {
   color: #ffffff;
 }
 
-/*  Contacte */
+/*  Contact */
 .contact-card ul {
   list-style: none;
   padding: 0;
@@ -399,6 +532,16 @@ input:focus, select:focus, textarea:focus {
 .contact-card li {
   margin: 7px 0;
   color: rgba(229,231,235,.85);
+  position: relative;
+  padding-left: 16px;
+}
+
+.contact-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+  font-weight: bold;
 }
 
 /*  Buttons  */
