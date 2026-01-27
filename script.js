@@ -26,7 +26,6 @@ if (contactForm) {
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
 
-    // Affichage console
     console.log("Données du formulaire :", data);
 
     if (contactMsg) {
@@ -40,7 +39,6 @@ if (contactForm) {
         body: formData
       });
 
-      // FormSubmit renvoie une redirection → on teste response.ok ou response.redirected
       if (response.ok || response.redirected) {
         if (contactMsg) {
           contactMsg.textContent = "Message envoyé avec succès ✅";
@@ -70,11 +68,11 @@ const sheerClose = $('#sheerClose');
 const sheerBackdrop = $('#sheerBackdrop');
 
 function openSheerModal() {
-  sheerModal.classList.add('active');
+  sheerModal.classList.add('open');   // <-- corrigé
   document.body.style.overflow = 'hidden';
 }
 function closeSheerModal() {
-  sheerModal.classList.remove('active');
+  sheerModal.classList.remove('open'); // <-- corrigé
   document.body.style.overflow = '';
 }
 
