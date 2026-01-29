@@ -45,28 +45,11 @@ Ce projet met en avant une architecture maintenable, un design responsive et des
 
 ---
 
-## 📂 Structure du projet
-
-├── index.html
-├── menu.html
-├── coach.html
-├── traduction.html
-├── contact.html
-├── footerBottom.html
-├── modal.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── assets/
-  └── img/
-    ├── (les images...)
-
-
-###  Cloner le projet
-Commencez par récupérer le code source depuis GitHub avec la commande suivante :
+### ⬇📝 Cloner le projet
+Récupérez le code source depuis GitHub avec la commande suivante :
 ```bash
 git clone https://github.com/JohnS-heer/roc-international.git
-
+```
+Merci...😎
 
 
