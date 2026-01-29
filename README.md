@@ -8,7 +8,7 @@ Ce projet met en avant une architecture maintenable, un design responsive et des
 ## 🚀 Fonctionnalités principales
 
 - **Menu dynamique**  
-  - Chargé depuis `menu.html` via `script.js`  
+  - Chargé depuis `menu.html` via `js/script.js`  
   - Gestion du bouton hamburger pour mobile  
   - Mise en surbrillance automatique du lien actif selon la page courante  
 
@@ -35,20 +35,38 @@ Ce projet met en avant une architecture maintenable, un design responsive et des
 
 ## 🛠️ Technologies utilisées
 
-- **HTML5** : Structure des pages (`index.html`, `menu.html`, `footerBottom.html`, `modal.html`)  
-- **CSS3** : Styles globaux (`style.css`), responsive design, animations  
+- **HTML5** : Structure des pages (`index.html`, `menu.html`, `coach.html`, `traduction.htmlv`, `contact.html`, `footerBottom.html`, `modal.html`)  
+- **CSS3** : Styles globaux (`css/style.css`), responsive design, animations  
 - **JavaScript (ES6)** :  
-  - `script.js` pour charger les composants, gérer le menu, le footer, la modale et le formulaire  
+  - `js/script.js` pour charger les composants, gérer le menu, le footer, la modale et le formulaire  
   - Utilisation de `fetch` pour injection dynamique  
   - Accessibilité (`aria-expanded`, `aria-hidden`)  
+- **Assets** : Images et logos dans `assets/img/`
 
 ---
 
-## ⚙️ Installation & Utilisation
-
-1. Clone le projet :
-   ```bash
-   git clone https://github.com/github.com/John-Sheer/roc-international.git
-
 ## 📂 Structure du projet
+
+├── index.html
+├── menu.html
+├── coach.html
+├── traduction.html
+├── contact.html
+├── footerBottom.html
+├── modal.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── assets/
+  └── img/
+    ├── (les images...)
+
+
+###  Cloner le projet
+Commencez par récupérer le code source depuis GitHub avec la commande suivante :
+```bash
+git clone https://github.com/JohnS-heer/roc-international.git
+
+
 
