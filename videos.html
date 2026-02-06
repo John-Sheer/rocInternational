@@ -1,74 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- La médiathèque pour montrer qu'on sait de quoi on parle -->
   <title>Coach — Vidéothèque</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-<header class="header">
-  <div class="container nav">
-    <a href="index.html" class="logo">ROC<span>International</span></a>
-    <nav class="menu" id="menu">
-      <a href="index.html">Accueil</a>
-      <a href="coaching.html">Coaching</a>
-      <a href="traduction.html">Traduction</a>      
-      <!-- <a href="videos.html" class="active">Vidéothèque</a> 
-      <a href="temoignages.html">Témoignages</a>-->
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <header class="header">
+    <div id="menu-container"></div>
+  </header>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Vidéothèque</h2>
-      <p>Choisissez une catégorie pour filtrer les vidéos.</p>
-    </div>
-
-    <!-- Filtres -->
-    <div class="filters">
-      <button class="btn btn-outline filter-btn active" data-filter="all">Toutes</button>
-      <button class="btn btn-outline filter-btn" data-filter="traduction">Traduction</button>
-      <button class="btn btn-outline filter-btn" data-filter="coaching">Coaching</button>
-      <button class="btn btn-outline filter-btn" data-filter="business">Business English</button>
-    </div>
-
-    <!-- Grille vidéos -->
-    <div class="video-grid">
-      <div class="video-card" data-category="coaching">
-        <div class="video-thumb">
-          <iframe src="https://www.youtube.com/embed/2tM1LrW7Sgk" title="Cours d'anglais débutant" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <h4>Cours d’anglais débutant — 20 min</h4>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Vidéothèque</h2>
+        <p>Choisissez une catégorie pour filtrer les vidéos.</p>
       </div>
 
-      <div class="video-card" data-category="traduction">
-        <div class="video-thumb">
-          <iframe src="https://www.youtube.com/embed/1vRto-2MMGQ" title="Techniques de traduction" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <h4>Techniques de traduction — 15 min</h4>
+      <!-- Filtres -->
+      <div class="filters">
+        <button class="btn btn-outline filter-btn active" data-filter="all">Toutes</button>
+        <button class="btn btn-outline filter-btn" data-filter="traduction">Traduction</button>
+        <button class="btn btn-outline filter-btn" data-filter="coaching">Coaching</button>
+        <button class="btn btn-outline filter-btn" data-filter="business">Business English</button>
       </div>
 
-      <div class="video-card" data-category="business">
-        <div class="video-thumb">
-          <iframe src="https://www.youtube.com/embed/EXAMPLE" title="Business English" frameborder="0" allowfullscreen></iframe>
+      <!-- Grille vidéos -->
+      <div class="video-grid">
+        <div class="video-card" data-category="coaching">
+          <div class="video-thumb">
+            <iframe src="https://www.youtube.com/embed/2tM1LrW7Sgk" title="Cours d'anglais débutant" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <h4>Cours d’anglais débutant — 20 min</h4>
         </div>
-        <h4>Business English — 10 min</h4>
+
+        <div class="video-card" data-category="traduction">
+          <div class="video-thumb">
+            <iframe src="https://www.youtube.com/embed/1vRto-2MMGQ" title="Techniques de traduction" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <h4>Techniques de traduction — 15 min</h4>
+        </div>
+
+        <div class="video-card" data-category="business">
+          <div class="video-thumb">
+            <iframe src="https://www.youtube.com/embed/EXAMPLE" title="Business English" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <h4>Business English — 10 min</h4>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer bottom -->
-<div id="footer-placeholder"></div>
+  <footer class="footer footer-modern">
+    <div class="container footer-grid">
+      <div class="brand">
+        <a href="index.html" class="logo footer-logo">ROC<span>International</span></a>
+        <p class="muted">Accompagnement en anglais et traduction pour étudiants et professionnels à Lomé.</p>
 
-<script src="script.js"></script>
+        <div class="company-info">
+          <p><strong>Récépissé :</strong> TOGO/MTPS/DGTPS/SPEE/2023</p>
+          <p><strong>RCCM :</strong> TG-LOM-2023-B-12345</p>
+          <p><strong>Année de création :</strong> 2013</p>
+          <p><strong>Secteur d’activité :</strong> Traduction et formation linguistique</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h4>Contact rapide</h4>
+        <p style="margin-bottom:16px;">BP: 13807, Adidogomé Lomé</p>
+        <ul class="footer-contacts" style="list-style:none; padding:0;">
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.44 8.19 3 7.64 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z" />
+            </svg>
+            (+228) 90 35 20 46
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.44 8.19 3 7.64 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z" />
+            </svg>
+            (+228) 99 64 93 01
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <a href="mailto:agbekogbe@yahoo.fr" style="color:#fff;">agbekogbe@yahoo.fr</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="traduction.html">Traduction</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="videos.html">Vidéothèque</a></li>
+          <li><a href="temoignages.html">Témoignages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2025 Cabinet ROC International. Tous droits réservés.
+      </div>
+
+      <div class="social-links">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/22890352046" aria-label="WhatsApp" target="_blank">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 2.178.644 3.15.644 3.18 0 5.767-2.587 5.768-5.766.001-3.185-2.575-5.77-5.769-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-2.846-.848-.919-.386-1.677-.923-2.006-1.333-.062-.073-.512-.663-.506-1.272.005-.58.307-.866.442-1.01.125-.132.324-.218.428-.222.105-.005.214-.004.323-.004.28 0 .546.11.642.34.122.289.418 1.02.453 1.096.035.076.06.166.012.261-.048.096-.145.241-.219.317-.074.076-.104.162-.034.283.076.132.553 1.055 1.189 1.62.482.428.847.533.957.585.111.053.225.044.301-.06.076-.104.309-.434.391-.582.083-.15.166-.124.279-.084.113.041.716.338.84.4.124.062.207.094.237.146.03.053.03.307-.114.712zM12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-2.52 0-4.76-.976-6.425-2.564l-3.265.856.874-3.18C1.837 13.56 1 11.85 1 10c0-4.962 4.038-9 9-9s9 4.038 9 9-4.038 9-9 9z" />
+          </svg>
+        </a>
+        <!-- Twitter / X -->
+        <a href="#" aria-label="Twitter" target="_blank">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="legal-links">
+        <a href="#">Mentions Légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#" id="sheerLink"
+          style="opacity:0.5; font-size:0.75rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:12px; margin-left:12px;">Propulsé
+          par Sheer Tech</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

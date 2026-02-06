@@ -1,101 +1,254 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coach — Coaching d’anglais</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- La page qui vend les services de coaching -->
+  <title>Coaching d’Excellence — ROC International</title>
+
+  <!-- Polices haut de gamme pour l'image de marque -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  
-<header class="header">
-<!-- le menu --> 
-<div id="menu-container"></div>
-</header>
 
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-head">
-      <h2>Coaching d’anglais</h2>
-    <p>Des cours sur mesure pour parler avec assurance et précision.</p>
-    <p>Nos cours de coaching d’anglais sont personnalisés pour répondre à vos besoins spécifiques. Que vous soyez débutant ou avancé, nous adaptons notre approche pour vous aider à atteindre vos objectifs linguistiques. Grâce à des méthodes d'enseignement interactives et engageantes, vous aurez l'occasion de pratiquer votre anglais dans des situations réelles, ce qui renforcera votre confiance et votre fluidité.</p>
-    <p>Nous croyons que l'apprentissage d'une langue doit être une expérience enrichissante et agréable. C'est pourquoi nous intégrons des activités ludiques, des jeux de rôle et des discussions stimulantes dans nos sessions. Vous aurez également accès à des ressources supplémentaires, telles que des exercices en ligne et des supports de cours, pour maximiser votre apprentissage en dehors des sessions.</p>
-    <p>Rejoignez-nous pour découvrir une nouvelle façon d'apprendre l'anglais, où chaque leçon est une étape vers votre succès linguistique.</p>
+  <header class="header">
+    <div class="header-inner">
+      <div id="menu-container" style="display:contents"></div>
+      <div id="google_translate_element"></div>
     </div>
+  </header>
 
-    <div class="courses">
-      <article class="course-card">
-        <div class="course-header">
-          <h3>Conversation & fluidité</h3>
-          <span class="tag">Tous niveaux</span>
+  <!-- =========================== -->
+  <!-- HERO SPECIFIQUE - Coaching -->
+  <!-- =========================== -->
+  <section class="hero" style="min-height: 60vh; padding-bottom: 60px;">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 style="font-size: 3rem; margin-bottom: 16px;">Coaching <span
+            style="color:var(--brand-gold); font-style:italic;">Exécutif</span></h1>
+        <p style="font-size: 1.1rem; max-width: 600px;">
+          Maîtrisez l'anglais des affaires avec assurance. Nos programmes sur-mesure sont conçus pour les leaders et
+          professionnels exigeants.
+        </p>
+      </div>
+      <div class="hero-image-wrap" style="max-width: 400px;">
+        <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800&auto=format&fit=crop"
+          alt="Coaching Session">
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- METHODOLOGIE - Notre approche -->
+  <!-- =========================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span>APPROCHE PÉDAGOGIQUE</span>
+        <h2>L'Excellence par la Pratique</h2>
+        <p class="mx-auto">
+          Nous croyons en une immersion structurée. Nos méthodes allient rigueur académique et mises en situation
+          réelles pour des résultats tangibles dès les premières séances.
+        </p>
+      </div>
+
+      <div class="process-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Immersion Totale</h3>
+          <p>Jeux de rôle, simulations de négociation et débats stratégiques pour casser la barrière de la langue.</p>
         </div>
-        Sessions orientées pratique:        
-        <ul>
-          <li>Prononciation</li>
-          <li>Spontanéité</li> 
-          <li>Vocabulaire utile</li>
-          <li>Feedback en direct</li>
-        </ul>
-        <p><strong> <span class="blue-text"> Objectif:</span></strong>  Améliorer votre capacité à converser en anglais avec aisance à travers des discussions variées, interactives et adaptées à vos besoins.</p>
-
-        <ul class="details">
-          <li><strong>Durée:</strong> 60 min</li>
-          <li><strong>Formats:</strong> Présentiel & en ligne</li>
-          <li><strong>Fréquence:</strong> 1–2×/semaine</li>
-        </ul>
-        <a class="btn btn-outline small" href="contact.html">Réserver</a>
-      </article>
-
-      <article class="course-card">
-        <div class="course-header">
-          <h3>Business English</h3>
-          <span class="tag tag-green">Intermédiaire+</span>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Feedback Instantané</h3>
+          <p>Correction phonétique et grammaticale en temps réel pour ancrer les bonnes habitudes.</p>
         </div>
-        Business & anglais professionnel:
-        <ul>
-            <li>Emails</li> 
-            <li>Réunions</li> 
-            <li>Présentations</li> 
-            <li>Négociation professionnelle</li>     
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- PROGRAMMES - Détail des cours -->
+  <!-- =========================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span>NOS PROGRAMMES</span>
+        <h2>Parcours de Formation</h2>
+      </div>
+
+      <div class="grid-cards">
+
+        <!-- Card 1 -->
+        <article class="card">
+          <div style="margin-bottom: 16px;">
+            <span
+              style="font-size: 0.8rem; text-transform:uppercase; color:var(--brand-navy); font-weight:700; background:rgba(10,25,47,0.05); padding:4px 8px; border-radius:4px;">Tous
+              Niveaux</span>
+          </div>
+          <h3>Conversation & Fluidité</h3>
+          <p>Améliorez votre spontanéité et votre aisance orale.</p>
+          <ul>
+            <li><strong>Focus :</strong> Prononciation & Vocabulaire</li>
+            <li><strong>Format :</strong> 60 min (Présentiel / Online)</li>
+            <li><strong>Idéal pour :</strong> Voyages & Social</li>
           </ul>
-          <p><strong> <span class="blue-text">Objectif:</span></strong>  Maîtriser l'anglais professionnel pour communiquer efficacement dans un contexte international, renforcer votre crédibilité en réunions et négociations, et progresser dans votre carrière en franchissant les barrières linguistiques.</p>
-        
-        <ul class="details">
-          <li><strong>Durée:</strong> 60–90 min</li>
-          <li><strong>Formats:</strong> Études de cas, jeux de rôle</li>
-          <li><strong>Objectif:</strong> Impact & clarté</li>
-        </ul>
-        <a class="btn btn-outline small" href="contact.html">Réserver</a>
-      </article>
+          <div style="margin-top: 24px;">
+            <a href="contact.html" class="btn btn-outline" style="width:100%">Réserver sa place</a>
+          </div>
+        </article>
 
-      <article class="course-card">
-        <div class="course-header">
-          <h3>Préparation TOEFL/IELTS</h3>
-          <span class="tag tag-orange">Examens</span>
-        </div>
-        Certifications internationales:
-        <ul>
-          <li>Stratégies</li> 
-          <li>Timing</li> 
-          <li>Simulateurs d’épreuves </li>
-          <li>Plan de révision</li>
-        </ul>
-        <p><strong> <span class="blue-text"> Objectif:</span></strong> Obtenir une certification reconnue internationalement en maximisant votre score, tout en développant les compétences linguistiques essentielles pour réussir vos études ou votre carrière à l'étranger. </p>
-        <ul class="details">
-          <li><strong>Durée:</strong> 60 min</li>
-          <li><strong>Supports:</strong> Fiches & tests</li>
-          <li><strong>Suivi:</strong> Hebdomadaire</li>
-        </ul>
-        <a class="btn btn-outline small" href="contact.html">Réserver</a>
-      </article>
+        <!-- Card 2 -->
+        <article class="card" style="border-top-color: var(--brand-navy);">
+          <div style="margin-bottom: 16px;">
+            <span
+              style="font-size: 0.8rem; text-transform:uppercase; color:var(--brand-gold); font-weight:700; background:rgba(197, 160, 89, 0.1); padding:4px 8px; border-radius:4px;">Best-Seller</span>
+          </div>
+          <h3>Business English</h3>
+          <p>L'anglais pour négocier, convaincre et diriger.</p>
+          <ul>
+            <li><strong>Focus :</strong> Emails, Réunions, Négociation</li>
+            <li><strong>Format :</strong> 60-90 min (Intensif)</li>
+            <li><strong>Idéal pour :</strong> Cadres & Entrepreneurs</li>
+          </ul>
+          <div style="margin-top: 24px;">
+            <a href="contact.html" class="btn btn-primary" style="width:100%">Candidater</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div style="margin-bottom: 16px;">
+            <span
+              style="font-size: 0.8rem; text-transform:uppercase; color:var(--brand-navy); font-weight:700; background:rgba(10,25,47,0.05); padding:4px 8px; border-radius:4px;">Certifications</span>
+          </div>
+          <h3>Préparation TOEFL / IELTS</h3>
+          <p>Stratégies éprouvées pour maximiser votre score.</p>
+          <ul>
+            <li><strong>Focus :</strong> Technique d'examen & Timing</li>
+            <li><strong>Format :</strong> Coaching privé</li>
+            <li><strong>Idéal pour :</strong> Études & Immigration</li>
+          </ul>
+          <div style="margin-top: 24px;">
+            <a href="contact.html" class="btn btn-outline" style="width:100%">Se préparer</a>
+          </div>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Footer bottom -->
-<div id="footer-placeholder"></div>
+  <!-- Footer -->
+  <footer class="footer footer-modern">
+    <div class="container footer-grid">
+      <div class="brand">
+        <a href="index.html" class="logo footer-logo">ROC<span>International</span></a>
+        <p class="muted">Accompagnement en anglais et traduction pour étudiants et professionnels à Lomé.</p>
 
-<script src="script.js"></script>
+        <div class="company-info">
+          <p><strong>Récépissé :</strong> TOGO/MTPS/DGTPS/SPEE/2023</p>
+          <p><strong>RCCM :</strong> TG-LOM-2023-B-12345</p>
+          <p><strong>Année de création :</strong> 2013</p>
+          <p><strong>Secteur d’activité :</strong> Traduction et formation linguistique</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h4>Contact rapide</h4>
+        <p style="margin-bottom:16px;">BP: 13807, Adidogomé Lomé</p>
+        <ul class="footer-contacts" style="list-style:none; padding:0;">
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.44 8.19 3 7.64 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z" />
+            </svg>
+            (+228) 90 35 20 46
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.44 8.19 3 7.64 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z" />
+            </svg>
+            (+228) 99 64 93 01
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <a href="mailto:agbekogbe@yahoo.fr" style="color:#fff;">agbekogbe@yahoo.fr</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="traduction.html">Traduction</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="videos.html">Vidéothèque</a></li>
+          <li><a href="temoignages.html">Témoignages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Le bas du footer avec Copyright -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2025 Cabinet ROC International. Tous droits réservés.
+      </div>
+
+      <div class="social-links">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/22890352046" aria-label="WhatsApp" target="_blank">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 2.178.644 3.15.644 3.18 0 5.767-2.587 5.768-5.766.001-3.185-2.575-5.77-5.769-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-2.846-.848-.919-.386-1.677-.923-2.006-1.333-.062-.073-.512-.663-.506-1.272.005-.58.307-.866.442-1.01.125-.132.324-.218.428-.222.105-.005.214-.004.323-.004.28 0 .546.11.642.34.122.289.418 1.02.453 1.096.035.076.06.166.012.261-.048.096-.145.241-.219.317-.074.076-.104.162-.034.283.076.132.553 1.055 1.189 1.62.482.428.847.533.957.585.111.053.225.044.301-.06.076-.104.309-.434.391-.582.083-.15.166-.124.279-.084.113.041.716.338.84.4.124.062.207.094.237.146.03.053.03.307-.114.712zM12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-2.52 0-4.76-.976-6.425-2.564l-3.265.856.874-3.18C1.837 13.56 1 11.85 1 10c0-4.962 4.038-9 9-9s9 4.038 9 9-4.038 9-9 9z" />
+          </svg>
+        </a>
+        <!-- Twitter / X -->
+        <a href="#" aria-label="Twitter" target="_blank">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="legal-links">
+        <a href="#">Mentions Légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#" id="sheerLink"
+          style="opacity:0.5; font-size:0.75rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:12px; margin-left:12px;">Propulsé
+          par Sheer Tech</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google Translate Scripts (Identical to Index) -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'fr,en,es,de,it,pt,zh-CN,ar,ru,ja',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

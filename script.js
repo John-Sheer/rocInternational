@@ -1,8 +1,15 @@
-// Helpers
+// ===============================================
+// SCRIPT PRINCIPAL - GESTION DYNAMIQUE DU SITE
+// ===============================================
+
+// Petit helper pour sélectionner les éléments plus vite (comme jQuery mais en Vanilla)
 const $ = (sel) => document.querySelector(sel);
 
 document.addEventListener("DOMContentLoaded", () => {
-  // === Charger le menu ===
+  // ===========================
+  // 1. CHARGEMENT DU MENU
+  // On injecte le menu.html pour ne pas le répéter sur chaque page
+  // ===========================
   const container = document.getElementById("menu-container");
 
   if (container) {
@@ -47,63 +54,70 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // === Charger le footer ===
+  // === Charger le footer (Legacy support or if needed) ===
   const footerContainer = document.getElementById("footer-placeholder");
   if (footerContainer) {
     fetch("footerBottom.html")
       .then(response => {
-        if (!response.ok) {
-          throw new Error("Erreur réseau : " + response.status);
-        }
+        if (!response.ok) throw new Error("Erreur réseau : " + response.status);
         return response.text();
       })
       .then(data => {
         footerContainer.innerHTML = data;
-
-        // Mettre l'année courante automatiquement
         const yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-        // === Charger la modale après injection du footer ===
-        fetch("modal.html")
-          .then(response => {
-            if (!response.ok) {
-              throw new Error("Erreur réseau : " + response.status);
-            }
-            return response.text();
-          })
-          .then(modalData => {
-            // Injecter la modale à la fin du body
-            document.body.insertAdjacentHTML("beforeend", modalData);
-
-            // Initialiser la modale
-            const sheerLink = document.getElementById("sheerLink");
-            const sheerModal = document.getElementById("sheerModal");
-            const sheerClose = document.getElementById("sheerClose");
-            const sheerBackdrop = document.getElementById("sheerBackdrop");
-
-            function openSheerModal() {
-              sheerModal.classList.add("open");
-              sheerModal.setAttribute("aria-hidden", "false");
-              document.body.style.overflow = "hidden";
-            }
-            function closeSheerModal() {
-              sheerModal.classList.remove("open");
-              sheerModal.setAttribute("aria-hidden", "true");
-              document.body.style.overflow = "";
-            }
-
-            if (sheerLink) sheerLink.addEventListener("click", e => { e.preventDefault(); openSheerModal(); });
-            if (sheerClose) sheerClose.addEventListener("click", closeSheerModal);
-            if (sheerBackdrop) sheerBackdrop.addEventListener("click", closeSheerModal);
-            document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheerModal(); });
-          })
-          .catch(error => {
-            console.error("Erreur lors du chargement de la modale:", error);
-          });
       })
-      .catch(error => {
-        console.error("Erreur lors du chargement du footer:", error);
-      });
+      .catch(error => console.error("Erreur lors du chargement du footer:", error));
   }
+
+  // ===========================
+  // 2. CHARGEMENT DE LA MODALE "SHEER TECH"
+  // Chargement asynchrone pour ne pas bloquer le reste de la page
+  // ===========================
+  fetch("modal.html")
+    .then(response => {
+      if (!response.ok) throw new Error("Erreur réseau : " + response.status);
+      return response.text();
+    })
+    .then(modalData => {
+      // On l'injecte tout à la fin du body pour être sûr qu'elle passe au-dessus de tout
+      document.body.insertAdjacentHTML("beforeend", modalData);
+
+      // Initialiser la modale
+      // Note: We use event delegation or wait for injection
+      const sheerLink = document.getElementById("sheerLink");
+      const sheerModal = document.getElementById("sheerModal");
+      const sheerClose = document.getElementById("sheerClose");
+      const sheerBackdrop = document.getElementById("sheerBackdrop");
+
+      function openSheerModal() {
+        if (sheerModal) {
+          sheerModal.classList.add("open");
+          sheerModal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+      }
+      function closeSheerModal() {
+        if (sheerModal) {
+          sheerModal.classList.remove("open");
+          sheerModal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+      }
+
+      // Attach global listener for sheerLink in case it's in static HTML
+      document.addEventListener("click", (e) => {
+        if (e.target.closest("#sheerLink")) {
+          e.preventDefault();
+          openSheerModal();
+        }
+      });
+
+      if (sheerClose) sheerClose.addEventListener("click", closeSheerModal);
+      if (sheerBackdrop) sheerBackdrop.addEventListener("click", closeSheerModal);
+      document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheerModal(); });
+    })
+    .catch(error => {
+      console.error("Erreur lors du chargement de la modale:", error);
+    });
 });

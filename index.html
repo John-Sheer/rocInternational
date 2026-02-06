@@ -1,126 +1,356 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Ici C'est ROC International - La page d'accueil principale -->
   <title>Cabinet ROC International — Coach d’anglais Christian KOGBE</title>
-  <meta name="description" content="Cabinet ROC International — Traduction professionnelle et coaching d’anglais par Christian KOGBE à Lomé." />
+  <meta name="description"
+    content="Cabinet ROC International — Traduction professionnelle et coaching d’anglais par Christian KOGBE à Lomé." />
+
+  <!-- On charge les polices qu'il faut pour le style Premium -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ma feuille de style principale -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<header class="header">
-
-  <!-- le menu --> 
-  <div id="menu-container"></div>
-</header>
-
-<section class="hero fade-in" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center;"> 
-  <div class="container hero-content"> 
-    <div class="hero-text"> 
-      <h1 class="slide-up">Cabinet <br> ROC International</h1> 
-      <div class="hero-cta slide-up delay-2"> 
-        <a href="traduction.html" class="btn btn-primary pulse">Services de traduction</a> 
-        <a href="coaching.html" class="btn btn-outline">Accéder à nos cours</a> 
-      </div> 
-    </div> 
-  </div> 
-</section>
-
-<section class="profile-strip"> 
-  <div class="container profile-inner"> 
-    <div class="profile-photo" aria-hidden="true"> 
-      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=800&auto=format&fit=crop" alt="Portrait de Christian KOGBE"> 
+  <header class="header">
+    <div class="header-inner">
+      <div id="menu-container" style="display:contents"></div>
+      <div id="google_translate_element"></div>
     </div>
-    <div class="profile-text"> 
-      <h2>Christian KOGBE</h2> 
-      <p>Coach d’anglais • Traducteur professionnel • 10+ ans d’expérience</p>
-      <p>Traduction précise et coaching efficace pour vos projets académiques et professionnels.</p>
-      <a href="contact.html" class="btn btn-outline">Prendre contact</a> 
-    </div> 
-  </div> 
-</section>
+  </header>
 
-<section class="section cabinet-coach">
-  <div class="container grid-2">
-    <div class="coach-photo">
-      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=1200&auto=format&fit=crop" 
-           alt="Coach Christian KOGBE" loading="lazy">
-    </div>
-
-    <div class="coach-info">
-      <h2>Cabinet ROC International</h2>
-      <h3>Coach d’anglais & Traducteur — Christian KOGBE</h3>
-      <p>
-        Le Cabinet <strong>ROC International</strong> accompagne étudiants, professionnels et entreprises dans la maîtrise de l’anglais 
-        et la traduction de documents spécialisés. Avec plus de 10 ans d’expérience, Christian KOGBE offre un service 
-        fiable, précis et adapté à vos besoins académiques et professionnels.
-      </p>
-      <ul class="details">
-        <li><strong>Téléphones:</strong> (+228)90352046 | (+228)99649301 | (+228)70778681</li>
-        <li><strong>Adresse:</strong> BP:13807, Adidogomé Lomé</li>
-        <li><strong>Email principal:</strong> agbekogbe@yahoo.fr</li>
-        <li><strong>Autres emails:</strong> kogbekossi@gmail.com, kogbechristian370@gmail.com</li>
-      </ul>
-
-      <div class="btn-group">
-        <a href="contact.html" class="btn btn-primary">Contactez-nous!</a>
-        <a href="coaching.html" class="btn btn-primary">Accéder à nos cours</a>
+  <!-- =========================== -->
+  <!-- HERO SECTION - L'impact visuel -->
+  <!-- =========================== -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>L'Excellence Linguistique <br> <span style="font-style:italic; color:var(--brand-gold)">Sans
+            Frontières</span></h1>
+        <p>Cabinet ROC International : Votre partenaire stratégique pour la traduction certifiée et le coaching
+          exécutif. Une expertise reconnue pour vos ambitions globales.</p>
+        <div class="btn-group">
+          <a href="traduction.html" class="btn btn-primary">Expertise Traduction</a>
+          <a href="coaching.html" class="btn btn-outline">Coaching Élites</a>
+        </div>
+      </div>
+      <!-- L'image du bureau ou qui représente le cabinet -->
+      <div class="hero-image-wrap">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+          alt="Bureau ROC International">
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
- <!-- Footer top -->
-<footer class="footer footer-modern">
-  <div class="container footer-grid">
-    <div class="brand">
-      <a href="index.html" class="logo footer-logo">ROC<span>International</span></a>
-      <p class="muted">Accompagnement en anglais et traduction pour étudiants et professionnels à Lomé.</p>
-     
-      <div class="company-info">
-        <p><strong>Récépissé :</strong> TOGO/MTPS/DGTPS/SPEE/2023</p>
-        <p><strong>RCCM :</strong> TG-LOM-2023-B-12345</p>
-        <p><strong>Année de création :</strong> 2013</p>
-        <p><strong>Secteur d’activité :</strong> Traduction et formation linguistique</p>
+  <!-- =========================== -->
+  <!-- STATS BAR - Les chiffres clés -->
+  <!-- =========================== -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <h3>10+</h3>
+        <p>Années d'Expérience</p>
+      </div>
+      <div class="stat-item">
+        <h3>500+</h3>
+        <p>Clients Satisfaits</p>
+      </div>
+      <div class="stat-item">
+        <h3>5M+</h3>
+        <p>Mots Traduits</p>
+      </div>
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Engagement Qualité</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- PROCESSUS - Comment on travaille -->
+  <!-- =========================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span>MÉTHODOLOGIE</span>
+        <h2>Notre Processus d'Excellence</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Analyse & Devis</h3>
+          <p>Évaluation précise de vos besoins linguistiques et proposition sur mesure sous 24h.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Exécution Experte</h3>
+          <p>Traduction ou coaching par des spécialistes certifiés avec double vérification qualité.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Livraison & Suivi</h3>
+          <p>Remise des livrables conformes aux standards internationaux et accompagnement post-projet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES / SERVICES GRID -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span>DOMAINES D'EXPERTISE</span>
+        <h2>Solutions pour Chaque Secteur</h2>
+      </div>
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Juridique & Légal</h3>
+          <ul>
+            <li>Contrats commerciaux</li>
+            <li>Actes notariés</li>
+            <li>Statuts de société</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Business & Finance</h3>
+          <ul>
+            <li>Rapports annuels</li>
+            <li>Plans d'affaires</li>
+            <li>Correspondance pro</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Technique & Médical</h3>
+          <ul>
+            <li>Manuels d'utilisation</li>
+            <li>Rapports médicaux</li>
+            <li>Fiches techniques</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER PROFILE STRIP -->
+  <section class="profile-strip">
+    <div class="container profile-inner">
+      <div class="profile-photo">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+          alt="Christian KOGBE - Fondateur">
+      </div>
+      <div class="profile-text">
+        <span
+          style="display:block; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.5); font-size:0.85rem; margin-bottom:10px;">Le
+          Fondateur</span>
+        <h2>Christian KOGBE</h2>
+        <p>Expert Linguistique & Coach Exécutif</p>
+        <p style="font-size:1rem; opacity:0.7;">
+          "Mon ambition est de briser les barrières linguistiques qui freinent votre croissance.
+          Avec ROC International, nous apportons une précision chirurgicale à vos échanges internationaux."
+        </p>
+        <div style="margin-top:32px;">
+          <a href="contact.html" class="btn btn-outline">Discuter avec Christian</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CABINET / ABOUT SECTION -->
+  <section class="section cabinet-coach">
+    <div class="container grid-2">
+      <div class="coach-photo">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+          alt="Bureaux ROC International">
+      </div>
+
+      <div class="coach-info">
+        <div class="section-head" style="text-align:left; margin:0 0 24px;">
+          <span>L'INSTITUTION</span>
+          <h2 style="font-size:2.5rem;">L'Excellence comme Standard</h2>
+        </div>
+
+        <p class="lead" style="font-size:1.1rem; color:var(--brand-navy); font-weight:500;">
+          Depuis plus de 10 ans, le Cabinet ROC International est la référence à Lomé pour les professionnels exigeants.
+        </p>
+        <p>
+          Nous ne faisons pas que traduire des mots ; nous transposons des idées, des contrats et des ambitions.
+          Que ce soit pour une négociation corporate ou une certification académique, notre signature est gage de
+          qualité.
+        </p>
+
+        <ul class="details" style="margin-top:32px; display:grid; gap:16px;">
+          <li style="display:flex; align-items:center;">
+            <span
+              style="width:32px; height:32px; background:var(--brand-navy); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:12px;">✓</span>
+            <span>Certification Officielle</span>
+          </li>
+          <li style="display:flex; align-items:center;">
+            <span
+              style="width:32px; height:32px; background:var(--brand-navy); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:12px;">✓</span>
+            <span>Confidentialité Totale</span>
+          </li>
+        </ul>
+
+        <div class="btn-group" style="margin-top:40px;">
+          <a href="contact.html" class="btn btn-primary">Démarrer un Projet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== -->
+  <!-- FOOTER UNIFIE -->
+  <!-- C'est ici qu'on met toutes les infos de contact et les liens légaux -->
+  <!-- =========================== -->
+  <footer class="footer footer-modern">
+    <div class="container footer-grid">
+      <!-- 1. Identité Entreprise -->
+      <div class="brand">
+        <a href="index.html" class="logo footer-logo">ROC<span>International</span></a>
+        <p class="muted">Accompagnement en anglais et traduction pour étudiants et professionnels à Lomé.</p>
+
+        <div class="company-info">
+          <p><strong>Récépissé :</strong> TOGO/MTPS/DGTPS/SPEE/2023</p>
+          <p><strong>RCCM :</strong> TG-LOM-2023-B-12345</p>
+          <p><strong>Année de création :</strong> 2013</p>
+          <p><strong>Secteur d’activité :</strong> Traduction et formation linguistique</p>
+        </div>
+      </div>
+
+      <!-- 2. Les Contacts -->
+      <div class="contact-card">
+        <h4>Contact rapide</h4>
+        <p style="margin-bottom:16px;">BP: 13807, Adidogomé Lomé</p>
+        <ul class="footer-contacts" style="list-style:none; padding:0;">
+          <li>
+            <!-- Icône Phone SVG -->
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.44 8.19 3 7.64 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z" />
+            </svg>
+            (+228) 90 35 20 46
+          </li>
+          <li>
+            <!-- Icône Phone SVG (Secondaire) -->
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.44 8.19 3 7.64 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z" />
+            </svg>
+            (+228) 99 64 93 01
+          </li>
+          <li>
+            <!-- Icône Email SVG -->
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--brand-gold)"
+              style="margin-right:8px; vertical-align:middle;">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <a href="mailto:agbekogbe@yahoo.fr" style="color:#fff;">agbekogbe@yahoo.fr</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. Liens de navigation -->
+      <div class="links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="traduction.html">Traduction & Interprétariat</a></li>
+          <li><a href="coaching.html">Programmes de Coaching</a></li>
+          <li><a href="videos.html">Vidéothèque & Ressources</a></li>
+          <li><a href="temoignages.html">Avis Clients</a></li>
+          <li><a href="contact.html">Nous Contacter / Devis</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="contact-card">
-      <h4>Contact rapide</h4>
-      BP: 13807, Adidogomé Lomé
-      <ul>
-        <li>(+228) 90352046</li>
-        <li>(+228) 99649301</li>
-        <li>(+228) 70778681</li>
-      </ul>
-      <div class="btn-group">
-        <a href="mailto:agbekogbe@yahoo.fr?subject=Contact" class="btn btn-primary small"> Email</a>
-        <a href="https://wa.me/22890352046" class="btn btn-primary small"> WhatsApp</a>
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2025 Cabinet ROC International. Tous droits réservés.
+      </div>
+
+      <div class="social-links">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/22890352046" aria-label="WhatsApp" target="_blank">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 2.178.644 3.15.644 3.18 0 5.767-2.587 5.768-5.766.001-3.185-2.575-5.77-5.769-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-2.846-.848-.919-.386-1.677-.923-2.006-1.333-.062-.073-.512-.663-.506-1.272.005-.58.307-.866.442-1.01.125-.132.324-.218.428-.222.105-.005.214-.004.323-.004.28 0 .546.11.642.34.122.289.418 1.02.453 1.096.035.076.06.166.012.261-.048.096-.145.241-.219.317-.074.076-.104.162-.034.283.076.132.553 1.055 1.189 1.62.482.428.847.533.957.585.111.053.225.044.301-.06.076-.104.309-.434.391-.582.083-.15.166-.124.279-.084.113.041.716.338.84.4.124.062.207.094.237.146.03.053.03.307-.114.712zM12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-2.52 0-4.76-.976-6.425-2.564l-3.265.856.874-3.18C1.837 13.56 1 11.85 1 10c0-4.962 4.038-9 9-9s9 4.038 9 9-4.038 9-9 9z" />
+          </svg>
+        </a>
+        <!-- Twitter / X -->
+        <a href="#" aria-label="Twitter" target="_blank">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="legal-links">
+        <a href="#">Mentions Légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#" id="sheerLink"
+          style="opacity:0.5; font-size:0.75rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:12px; margin-left:12px;">Propulsé
+          par Sheer Tech</a>
       </div>
     </div>
-
-    <div class="links">
-      <h4>Liens utiles</h4>
-      <ul>
-        <li><a href="traduction.html">Traduction</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="videos.html">Vidéothèque</a></li>
-        <li><a href="temoignages.html">Témoignages</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-
+  </footer>
   <!-- Footer bottom -->
-<div id="footer-placeholder"></div>
+  <div class="footer-bottom">
+    <div class="copyright">
+      &copy; 2025 Cabinet ROC International. Tous droits réservés.
+    </div>
 
-<script>
-  // année automatique
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    <div class="social-links">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/22890352046" aria-label="WhatsApp" target="_blank">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path
+            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 2.178.644 3.15.644 3.18 0 5.767-2.587 5.768-5.766.001-3.185-2.575-5.77-5.769-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-2.846-.848-.919-.386-1.677-.923-2.006-1.333-.062-.073-.512-.663-.506-1.272.005-.58.307-.866.442-1.01.125-.132.324-.218.428-.222.105-.005.214-.004.323-.004.28 0 .546.11.642.34.122.289.418 1.02.453 1.096.035.076.06.166.012.261-.048.096-.145.241-.219.317-.074.076-.104.162-.034.283.076.132.553 1.055 1.189 1.62.482.428.847.533.957.585.111.053.225.044.301-.06.076-.104.309-.434.391-.582.083-.15.166-.124.279-.084.113.041.716.338.84.4.124.062.207.094.237.146.03.053.03.307-.114.712zM12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-2.52 0-4.76-.976-6.425-2.564l-3.265.856.874-3.18C1.837 13.56 1 11.85 1 10c0-4.962 4.038-9 9-9s9 4.038 9 9-4.038 9-9 9z" />
+        </svg>
+      </a>
+      <!-- Twitter / X -->
+      <a href="#" aria-label="Twitter" target="_blank">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path
+            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      </a>
+    </div>
 
-<script src="script.js"></script>
+    <div class="legal-links">
+      <a href="#">Mentions Légales</a>
+      <a href="#">Confidentialité</a>
+    </div>
+  </div>
+  </footer>
+
+
+
+  <!-- GOOGLE TRANSLATE SCRIPT -->
+  <!-- GOOGLE TRANSLATE SCRIPT -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'fr,en,es,de,it,pt,zh-CN,ar,ru,ja',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
