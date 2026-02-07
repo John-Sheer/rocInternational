@@ -14,69 +14,143 @@
 
   <!--header-->
   <header class="header">
-    <div id="menu-container"></div>
+    <div class="header-inner">
+      <div id="menu-container" style="display:contents"></div>
+      <div id="google_translate_element"></div>
+    </div>
   </header>
 
-  <!-- Section Contact - Formulaire & Infos -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>
-          Vous souhaitez obtenir des informations sur nos services de coaching en anglais,
-          de formation linguistique ou de traduction professionnelle ?
-          L’équipe de ROC International est à votre disposition pour vous accompagner.
-          Merci de remplir le formulaire ci-dessous en précisant votre demande.
-          Nous vous répondrons dans les meilleurs délais avec une solution adaptée à votre besoin.
+  <!-- =========================== -->
+  <!-- HERO SPECIFIQUE - Contact -->
+  <!-- On garde le ton pro et accueillant -->
+  <!-- =========================== -->
+  <section class="hero" style="min-height: 40vh; padding-bottom: 40px;">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 style="font-size: 3rem; margin-bottom: 16px;">Parlons de votre <span
+            style="color:var(--brand-gold); font-style:italic;">Réussite</span></h1>
+        <p style="font-size: 1.1rem; max-width: 600px;">
+          Vous avez un projet de traduction, besoin d’un coaching intensif ou d'un conseil ? Notre équipe est à votre
+          écoute.
         </p>
       </div>
+    </div>
+  </section>
 
-      <!-- Formulaire - Configuration FormSubmit pour la gestion des mails sans backend -->
-      <form id="contactForm" class="form card" action="https://formsubmit.co/meskojohn@gmail.com" method="POST">
-        <!-- Options FormSubmit -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="merci.html">
+  <!-- Section Contact - Formulaire & Infos -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="contact-grid">
 
-        <div class="form-row">
-          <div class="form-field">
-            <label for="cName">Nom complet</label>
-            <input type="text" id="cName" name="name" placeholder="Votre nom" required />
+        <!-- Côté Formulaire -->
+        <div class="contact-form-side">
+          <div class="section-head" style="text-align: left; margin-bottom: 30px;">
+            <span>ENVOYEZ UN MESSAGE</span>
+            <h2>Demande de renseignements / Devis</h2>
           </div>
-          <div class="form-field">
-            <label for="cEmail">Email</label>
-            <input type="email" id="cEmail" name="email" placeholder="vous@exemple.com" required />
+
+          <!-- Formulaire - Configuration FormSubmit pour la gestion des mails sans backend -->
+          <form id="contactForm" class="form card" action="https://formsubmit.co/meskojohn@gmail.com" method="POST">
+            <!-- Options FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="merci.html">
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cName">Nom complet</label>
+                <input type="text" id="cName" name="name" placeholder="Votre nom" required />
+              </div>
+              <div class="form-field">
+                <label for="cEmail">Email</label>
+                <input type="email" id="cEmail" name="email" placeholder="vous@exemple.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cService">Service</label>
+                <select id="cService" name="service" required>
+                  <option value="">Sélectionner</option>
+                  <option>Traduction</option>
+                  <option>Coaching d'anglais</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="cPhone">Téléphone</label>
+                <input type="text" id="cPhone" name="phone" placeholder="Votre numéro" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="cMessage">Message</label>
+                <textarea id="cMessage" name="message" rows="5" placeholder="Votre message..." required></textarea>
+              </div>
+            </div>
+
+            <div id="contactMsg" class="form-msg"></div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Envoyer</button>
+            </div>
+        </div>
+
+        <!-- Côté Infos Pratiques -->
+        <div class="contact-info-side">
+          <div class="info-card">
+            <h3>Nos Coordonnées</h3>
+            <p>Retrouvez-nous à Lomé ou contactez-nous directement par téléphone.</p>
+
+            <ul class="contact-detailed-list">
+              <li>
+                <div class="icon-wrap">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong>Adresse physique</strong>
+                  <span>BP: 13807, Adidogomé, Lomé - TOGO</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon-wrap">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path
+                      d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 2.178.644 3.15.644 3.18 0 5.767-2.587 5.768-5.766.001-3.185-2.575-5.77-5.769-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-2.846-.848-.919-.386-1.677-.923-2.006-1.333-.062-.073-.512-.663-.506-1.272.005-.58.307-.866.442-1.01.125-.132.324-.218.428-.222.105-.005.214-.004.323-.004.28 0 .546.11.642.34.122.289.418 1.02.453 1.096.035.076.06.166.012.261-.048.096-.145.241-.219.317-.074.076-.104.162-.034.283.076.132.553 1.055 1.189 1.62.482.428.847.533.957.585.111.053.225.044.301-.06.076-.104.309-.434.391-.582.083-.15.166-.124.279-.084.113.041.716.338.84.4.124.062.207.094.237.146.03.053.03.307-.114.712zM12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-2.52 0-4.76-.976-6.425-2.564l-3.265.856.874-3.18C1.837 13.56 1 11.85 1 10c0-4.962 4.038-9 9-9s9 4.038 9 9-4.038 9-9 9z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong>WhatsApp Business</strong>
+                  <span><a href="https://wa.me/22890352046" style="color:var(--brand-navy)">(+228) 90 35 20
+                      46</a></span>
+                </div>
+              </li>
+              <li>
+                <div class="icon-wrap">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                  </svg>
+                </div>
+                <div>
+                  <strong>Sécrétariat</strong>
+                  <span>(+228) 99 64 93 01</span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Petit badge dynamique pour le côté rassurant -->
+            <!-- Petit badge dynamique pour le côté rassurant - En Or pour la cohérence -->
+            <div class="availability-tag">
+              <span class="dot"></span> Disponible actuellement
+            </div>
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-field">
-            <label for="cService">Service</label>
-            <select id="cService" name="service" required>
-              <option value="">Sélectionner</option>
-              <option>Traduction</option>
-              <option>Coaching d'anglais</option>
-              <option>Autre</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="cPhone">Téléphone</label>
-            <input type="text" id="cPhone" name="phone" placeholder="Votre numéro" />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field full">
-            <label for="cMessage">Message</label>
-            <textarea id="cMessage" name="message" rows="5" placeholder="Votre message..." required></textarea>
-          </div>
-        </div>
-
-        <div id="contactMsg" class="form-msg"></div>
-
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Envoyer</button>
-        </div>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -165,7 +239,7 @@
         <a href="#">Mentions Légales</a>
         <a href="#">Confidentialité</a>
         <a href="#" id="sheerLink"
-          style="opacity:0.5; font-size:0.75rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:12px; margin-left:12px;">Propulsé
+          style="color:var(--brand-gold); opacity:0.8; font-size:0.75rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:12px; margin-left:12px;">Propulsé
           par Sheer Tech</a>
       </div>
     </div>
