@@ -120,4 +120,90 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => {
       console.error("Erreur lors du chargement de la modale:", error);
     });
+
+  // =========================================
+  // TESTIMONIALS SYSTEM (Professional Version)
+  // =========================================
+  const testimonialForm = document.getElementById('testimonialForm');
+  const testimonialsGrid = document.getElementById('testimonialsGrid');
+
+  if (testimonialForm && testimonialsGrid) {
+    // Load existing local testimonials
+    const savedTestimonials = JSON.parse(localStorage.getItem('localTestimonials') || '[]');
+    savedTestimonials.forEach(data => appendTestimonial(data, false));
+
+    testimonialForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(testimonialForm);
+      const starRating = formData.get('rating');
+
+      const newTestimonial = {
+        name: formData.get('name'),
+        profession: formData.get('profession'),
+        rating: parseInt(starRating),
+        testimony: formData.get('testimony'),
+        date: new Date().toLocaleDateString('fr-FR')
+      };
+
+      // Save to localStorage
+      const lsTestimonials = JSON.parse(localStorage.getItem('localTestimonials') || '[]');
+      lsTestimonials.push(newTestimonial);
+      localStorage.setItem('localTestimonials', JSON.stringify(lsTestimonials));
+
+      // Append to UI
+      appendTestimonial(newTestimonial, true);
+
+      // Reset form
+      testimonialForm.reset();
+
+      // Success state
+      const submitBtn = testimonialForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = '✓ Témoignage diffusé !';
+      submitBtn.style.background = '#0d9488'; // Teal success
+
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+      }, 4000);
+    });
+  }
+
+  function appendTestimonial(data, animate) {
+    const card = document.createElement('article');
+    card.className = 'card testimonial-card';
+    if (animate) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+    }
+
+    // Generate star string (high-quality Unicode stars)
+    const starsString = '★'.repeat(data.rating).padEnd(5, '☆');
+    const defaultPhoto = `https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=0a192f&color=fff&bold=true`;
+
+    card.innerHTML = `
+      <div class="stars" style="color:var(--brand-gold); margin-bottom:16px; font-size: 1.25rem;" aria-label="${data.rating} étoiles">${starsString}</div>
+      <p style="font-style: italic; line-height: 1.7; font-size: 1.05rem; margin-bottom: 24px;">
+        “${data.testimony}”
+      </p>
+      <div class="author" style="display: flex; align-items: center; gap: 16px;">
+        <img src="${defaultPhoto}" alt="${data.name}" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover;">
+        <div>
+          <strong style="display: block; color: var(--brand-navy); font-size: 1rem;">${data.name}</strong>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">${data.profession}</span>
+        </div>
+      </div>
+    `;
+
+    testimonialsGrid.prepend(card);
+
+    if (animate) {
+      setTimeout(() => {
+        card.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 20);
+    }
+  }
 });
