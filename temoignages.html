@@ -12,57 +12,82 @@
 
 <body>
   <header class="header">
-    <div id="menu-container"></div>
+    <div class="header-inner">
+      <div id="menu-container" style="display:contents"></div>
+      <div id="google_translate_element"></div>
+    </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Ce que disent mes clients</h2>
-        <p>Des résultats concrets en traduction et en anglais.</p>
+  <!-- =========================== -->
+  <!-- HERO SPECIFIQUE - Témoignages -->
+  <!-- =========================== -->
+  <section class="hero" style="min-height: 50vh; padding-bottom: 60px;">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 style="font-size: 3rem; margin-bottom: 16px;">Témoignages & <span
+            style="color:var(--brand-gold); font-style:italic;">Succès</span></h1>
+        <p style="font-size: 1.1rem; max-width: 600px;">
+          Découvrez les retours d'expérience de nos clients. Votre réussite est notre plus belle signature.
+        </p>
       </div>
-
-      <div class="testimonials">
-        <article class="testimonial-card">
-          <div class="stars" aria-label="5 étoiles">★★★★★</div>
-          <p>“Traduction impeccable de nos contrats et supports marketing. Délais tenus et style parfait.”</p>
-          <div class="author">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop"
-              alt="Client 1" loading="lazy">
-            <div>
-              <strong>Amélie R.</strong>
-              <span>Responsable marketing</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <div class="stars" aria-label="5 étoiles">★★★★★</div>
-          <p>“Grâce au coaching, j’ai gagné en aisance à l’oral et obtenu mon score IELTS.”</p>
-          <div class="author">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
-              alt="Client 2" loading="lazy">
-            <div>
-              <strong>David K.</strong>
-              <span>Étudiant</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <div class="stars" aria-label="5 étoiles">★★★★★</div>
-          <p>“Sessions business English très efficaces—mes présentations sont plus claires et percutantes.”</p>
-          <div class="author">
-            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop"
-              alt="Client 3" loading="lazy">
-            <div>
-              <strong>Inès T.</strong>
-              <span>Cheffe de projet</span>
-            </div>
-          </div>
-        </article>
+      <div class="hero-image-wrap" style="max-width: 400px;">
+        <!-- Image symbolique de satisfaction / poignée de main -->
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop"
+          alt="Satisfaction Client">
       </div>
     </div>
+  </section>
+
+  <div class="grid-cards">
+    <!-- Card 1 -->
+    <article class="card testimonial-card">
+      <div class="stars" style="color:var(--brand-gold); margin-bottom:16px;" aria-label="5 étoiles">★★★★★</div>
+      <p style="font-style: italic; line-height: 1.7; font-size: 1.05rem; margin-bottom: 24px;">
+        “Traduction impeccable de nos contrats et supports marketing. Délais tenus et style parfait.”
+      </p>
+      <div class="author" style="display: flex; align-items: center; gap: 16px;">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop"
+          alt="Amélie R." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+        <div>
+          <strong style="display: block; color: var(--brand-navy); font-size: 1rem;">Amélie R.</strong>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Responsable marketing</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card testimonial-card">
+      <div class="stars" style="color:var(--brand-gold); margin-bottom:16px;" aria-label="5 étoiles">★★★★★</div>
+      <p style="font-style: italic; line-height: 1.7; font-size: 1.05rem; margin-bottom: 24px;">
+        “Grâce au coaching, j’ai gagné en aisance à l’oral et obtenu mon score IELTS.”
+      </p>
+      <div class="author" style="display: flex; align-items: center; gap: 16px;">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
+          alt="David K." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+        <div>
+          <strong style="display: block; color: var(--brand-navy); font-size: 1rem;">David K.</strong>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Étudiant</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card testimonial-card">
+      <div class="stars" style="color:var(--brand-gold); margin-bottom:16px;" aria-label="5 étoiles">★★★★★</div>
+      <p style="font-style: italic; line-height: 1.7; font-size: 1.05rem; margin-bottom: 24px;">
+        “Sessions business English très efficaces—mes présentations sont plus claires et percutantes.”
+      </p>
+      <div class="author" style="display: flex; align-items: center; gap: 16px;">
+        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop"
+          alt="Inès T." style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+        <div>
+          <strong style="display: block; color: var(--brand-navy); font-size: 1rem;">Inès T.</strong>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Cheffe de projet</span>
+        </div>
+      </div>
+    </article>
+  </div>
+  </div>
   </section>
 
   <!-- FOOTER -->

@@ -837,10 +837,6 @@ font {
 .footer a:hover {
   color: #fff;
   padding-left: 0;
-  /* Remove slide */
-  text-decoration: underline;
-  text-decoration-color: var(--brand-gold);
-  text-underline-offset: 4px;
 }
 
 /* Optional Newsletter Visual (CSS Only representation if needed later via HTML) */
