@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. CHARGEMENT DE LA MODALE "SHEER TECH"
   // Chargement asynchrone pour ne pas bloquer le reste de la page
   // ===========================
-  fetch("modal.html")
+  fetch("modal.html?v=" + new Date().getTime())
     .then(response => {
       if (!response.ok) throw new Error("Erreur réseau : " + response.status);
       return response.text();

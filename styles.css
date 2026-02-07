@@ -401,41 +401,25 @@ font {
   line-height: 1.7;
 }
 
-.hero-image-wrap {
-  position: relative;
-  border-radius: var(--radius-lg);
-  perspective: 1000px;
-  z-index: 1;
+/* Hero section layout */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
 }
 
-.hero-image-wrap::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  right: -20px;
-  bottom: -20px;
-  left: 20px;
-  border: 1px solid var(--brand-gold);
-  border-radius: var(--radius-lg);
-  opacity: 0.3;
-  z-index: -1;
-  transition: transform 0.5s ease;
+.hero-text h1 {
+  margin-bottom: 32px;
+  color: var(--brand-navy);
+  text-shadow: 0 20px 40px rgba(10, 25, 47, 0.05);
 }
 
-.hero-image-wrap:hover::before {
-  transform: translate(10px, 10px);
-}
-
-.hero-image-wrap img {
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-hover);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 100%;
-  display: block;
-}
-
-.hero-image-wrap:hover img {
-  transform: translateY(-5px);
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 48px;
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 /* =========================================
@@ -1024,6 +1008,27 @@ font {
   box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
 }
 
+/* WhatsApp Specific Style (Footer: Monochrome consistency) */
+.social-links a.social-whatsapp,
+.socials .social-link.social-whatsapp {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  opacity: 0.8;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a.social-whatsapp:hover,
+.socials .social-link.social-whatsapp:hover {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: #050a14;
+  opacity: 1;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+}
+
 /* Liens légaux + Sheer Tech */
 .legal-links a {
   color: rgba(255, 255, 255, 0.4);
@@ -1174,15 +1179,15 @@ font {
 /* Stylish image frame */
 .coach-photo img {
   border-radius: var(--radius-lg);
-  box-shadow: 20px 20px 0 var(--brand-navy);
-  /* Solid offset shadow */
-  filter: grayscale(10%);
+  box-shadow: 25px 25px 0 var(--brand-gold);
+  /* Prestigious gold offset */
+  filter: grayscale(5%);
   transition: all 0.5s ease;
 }
 
 .coach-photo:hover img {
   filter: grayscale(0%);
-  box-shadow: 10px 10px 0 var(--brand-gold);
+  box-shadow: 15px 15px 0 var(--brand-gold);
   transform: translate(5px, 5px);
 }
 
@@ -1205,6 +1210,38 @@ font {
   opacity: 1;
 }
 
+#sheerLink,
+.legal-links a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  position: relative;
+  text-decoration: none !important;
+}
+
+#sheerLink::after,
+.legal-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--brand-gold);
+  transition: width 0.3s ease;
+}
+
+#sheerLink:hover,
+.legal-links a:hover {
+  transform: scale(1.05);
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.4));
+}
+
+#sheerLink:hover::after,
+.legal-links a:hover::after {
+  width: 100%;
+}
+
 .modal-backdrop {
   position: absolute;
   inset: 0;
@@ -1215,17 +1252,20 @@ font {
 }
 
 .modal-content.sheer-modal {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
   width: 90%;
-  max-width: 550px;
-  padding: 48px;
+  max-width: 500px;
+  padding: 60px 40px;
   position: relative;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  transform: scale(0.95) translateY(10px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(197, 160, 89, 0.1);
-  /* Subtle gold border */
+  border-radius: 30px;
+  box-shadow:
+    0 25px 50px -12px rgba(10, 25, 47, 0.2),
+    inset 0 0 0 1px rgba(197, 160, 89, 0.1);
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-align: center;
 }
 
 .modal.open .modal-content.sheer-modal {
@@ -1274,6 +1314,8 @@ font {
   justify-content: center;
   gap: 24px;
   margin-top: 32px;
+  flex-wrap: wrap;
+  /* Handle more buttons gracefully */
 }
 
 .action-btn {
@@ -1304,11 +1346,24 @@ font {
 }
 
 .action-btn.whatsapp {
-  background: var(--brand-gold);
+  background: #25D366;
+  border-color: #25D366;
 }
 
 .action-btn.whatsapp:hover {
-  background: var(--brand-navy);
+  background: #128C7E;
+  border-color: #128C7E;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+}
+
+.action-btn.linkedin:hover {
+  background: #0077b5;
+  box-shadow: 0 10px 20px rgba(0, 119, 181, 0.4);
+}
+
+.action-btn.github:hover {
+  background: #333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Tooltip for phone numbers */
@@ -1338,8 +1393,19 @@ font {
 }
 
 .sheer-body h2 {
+  font-family: var(--font-serif);
   color: var(--brand-navy);
-  text-align: center;
+  font-size: 2.25rem;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.sheer-tagline {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto 40px;
 }
 
 /* =========================================
@@ -1458,19 +1524,108 @@ textarea {
   }
 }
 
-/* Coach Photo Sizing */
-.coach-photo img,
-.profile-photo img {
+/* Photo Decoration - "Prestige Frame" (Rectangular for Hero) */
+.hero-image-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   max-width: 400px;
-  /* Reduced dimension */
-  height: auto;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
   margin: 0 auto;
 }
 
+/* Photo Decoration - "Prestige Circle" (For Profiles) */
+.coach-photo,
+.profile-photo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 300px;
+  /* Profiles are usually slightly smaller than hero wraps */
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-image-wrap::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  bottom: -20px;
+  left: 20px;
+  background: var(--brand-gold);
+  opacity: 0.15;
+  border-radius: var(--radius-md);
+  z-index: -1;
+  border: 1px solid var(--brand-gold);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coach-photo::after,
+.profile-photo::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  bottom: -10px;
+  left: 10px;
+  background: var(--brand-gold);
+  opacity: 0.15;
+  border-radius: 50%;
+  /* Perfect circle */
+  z-index: -1;
+  border: 1px solid var(--brand-gold);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-image-wrap:hover::after,
+.coach-photo:hover::after,
+.profile-photo:hover::after {
+  transform: translate(10px, 10px);
+  opacity: 0.25;
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(5%);
+}
+
+.coach-photo img,
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Important for circular crop */
+  border-radius: 50%;
+  /* Perfect circle */
+  box-shadow: var(--shadow-card);
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(5%);
+}
+
+.hero-image-wrap:hover img,
+.coach-photo:hover img,
+.profile-photo:hover img {
+  transform: translateY(-5px);
+  filter: grayscale(0%);
+  box-shadow: 0 20px 40px rgba(10, 25, 47, 0.15);
+}
+
 @media (max-width: 900px) {
-  .hero-image-wrap {
+
+  .hero-image-wrap,
+  .coach-photo,
+  .profile-photo {
     max-width: 100%;
+    margin-top: 40px;
   }
 }
