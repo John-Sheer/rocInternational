@@ -132,17 +132,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedTestimonials = JSON.parse(localStorage.getItem('localTestimonials') || '[]');
     savedTestimonials.forEach(data => appendTestimonial(data, false));
 
-    testimonialForm.addEventListener('submit', (e) => {
+    testimonialForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const formData = new FormData(testimonialForm);
       const starRating = formData.get('rating');
+      const photoFile = formData.get('photo');
+      let photoBase64 = null;
+
+      if (photoFile && photoFile.size > 0) {
+        photoBase64 = await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.readAsDataURL(photoFile);
+        });
+      }
 
       const newTestimonial = {
         name: formData.get('name'),
         profession: formData.get('profession'),
         rating: parseInt(starRating),
         testimony: formData.get('testimony'),
+        photo: photoBase64,
         date: new Date().toLocaleDateString('fr-FR')
       };
 
@@ -161,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitBtn = testimonialForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       submitBtn.textContent = '✓ Témoignage diffusé !';
-      submitBtn.style.background = '#0d9488'; // Teal success
+      submitBtn.style.background = '#0a192f'; // Brand Navy success
 
       setTimeout(() => {
         submitBtn.textContent = originalText;
@@ -178,20 +189,20 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = 'translateY(20px)';
     }
 
-    // Generate star string (high-quality Unicode stars)
     const starsString = '★'.repeat(data.rating).padEnd(5, '☆');
     const defaultPhoto = `https://ui-avatars.com/api/?name=${encodeURIComponent(data.name)}&background=0a192f&color=fff&bold=true`;
+    const userPhoto = data.photo || defaultPhoto;
 
     card.innerHTML = `
-      <div class="stars" style="color:var(--brand-gold); margin-bottom:16px; font-size: 1.25rem;" aria-label="${data.rating} étoiles">${starsString}</div>
-      <p style="font-style: italic; line-height: 1.7; font-size: 1.05rem; margin-bottom: 24px;">
+      <div class="stars" style="color:var(--brand-gold); margin-bottom:12px; font-size: 1.1rem;" aria-label="${data.rating} étoiles">${starsString}</div>
+      <p style="font-style: italic; line-height: 1.6; font-size: 0.95rem; margin-bottom: 20px; color: var(--text-secondary);">
         “${data.testimony}”
       </p>
-      <div class="author" style="display: flex; align-items: center; gap: 16px;">
-        <img src="${defaultPhoto}" alt="${data.name}" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover;">
+      <div class="author" style="display: flex; align-items: center; gap: 12px;">
+        <img src="${userPhoto}" alt="${data.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-surface);">
         <div>
-          <strong style="display: block; color: var(--brand-navy); font-size: 1rem;">${data.name}</strong>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">${data.profession}</span>
+          <strong style="display: block; color: var(--brand-navy); font-size: 0.95rem; line-height: 1.2;">${data.name}</strong>
+          <span style="font-size: 0.8rem; color: var(--text-secondary); opacity: 0.8;">${data.profession}</span>
         </div>
       </div>
     `;
@@ -205,5 +216,16 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.transform = 'translateY(0)';
       }, 20);
     }
+  }
+
+  // Final Pass: Custom File Input Handlers
+  const fileInput = document.getElementById('userPhoto');
+  const fileNameDisplay = document.getElementById('fileName');
+
+  if (fileInput && fileNameDisplay) {
+    fileInput.addEventListener('change', (e) => {
+      const name = e.target.files[0]?.name || 'Aucun fichier choisi';
+      fileNameDisplay.textContent = name;
+    });
   }
 });
